@@ -82,6 +82,8 @@ public class Lab5 {
             System.out.println("1.Withdraw   2.Deposit   3.Compute interest for savings account    4.Display account details    5.EXIT");
             System.out.println("Enter the choice: ");
             q=s.nextInt();
+            if(q==5){
+                System.exit(0);}
             s.nextLine();
             System.out.println("Enter the type of account: ");
             type=s.nextLine();
@@ -154,3 +156,4 @@ public class Lab5 {
 
     }
 }
+
