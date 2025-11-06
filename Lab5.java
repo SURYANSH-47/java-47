@@ -6,14 +6,14 @@ class Account{
     }
 }
 class Savings_Account extends Account{
-    double balance=0;double ci=0.05;double time=0.25;
+    double balance=0;double rate=0.05;double time_in_years=0.25;
 
     Savings_Account(String name,int a){
         super(name,a);
-    super.type="savings";}
+        super.type="savings";}
     void compute_interest(){
-        System.out.println("The interest earned is: "+balance*(ci/time));
-        balance=balance+(balance*(ci/time));
+        System.out.println("The interest earned is: "+balance*(rate/time_in_years));
+        balance=balance+(balance*(rate/time_in_years));
         System.out.println("The balance is: "+balance);
     }
     void deposit(double d){
@@ -29,7 +29,7 @@ class Savings_Account extends Account{
         System.out.println("Balance is: "+balance);
     }
 
-    }
+}
 
 class Current_Account extends Account{
     double balance=0;double service_charge=150;double min_balance=3000;
@@ -55,13 +55,14 @@ class Current_Account extends Account{
     void display(){
         System.out.println("Customer name: "+customer_name);
         System.out.println("Account number is: "+acc_no);
-        System.out.println("Type of account is: Savings");
+        System.out.println("Type of account is: CURRENT");
         System.out.println("Balance is: "+balance);
     }
 }
 public class Lab5 {
     public static void main(String[] args) {
         int q;String type;int accno;double deposit;double withdraw;
+        String qwe="Savings";String lwe="Current";
         Scanner s=new Scanner(System.in);
         String name;int accno1;int l;
         Account[] a=new Account[2];
@@ -78,18 +79,18 @@ public class Lab5 {
             s.nextLine();
         }
         for(int i=1;i>0;i++){
-            System.out.println("1.Withdraw   2.Deposit   3.Compute interest for savings account    4.Display account details");
+            System.out.println("1.Withdraw   2.Deposit   3.Compute interest for savings account    4.Display account details    5.EXIT");
             System.out.println("Enter the choice: ");
             q=s.nextInt();
             s.nextLine();
             System.out.println("Enter the type of account: ");
             type=s.nextLine();
-            if(type=="savings"){
+            if(type.equalsIgnoreCase(qwe)){
                 System.out.println("Enter the accno: ");
                 accno1=s.nextInt();
                 for(l=0;l<2;l++){
                     if(accno1==we[l].acc_no){
-                        
+
                         break;
                     }
                 }
@@ -110,19 +111,16 @@ public class Lab5 {
                     case 4:
                         we[l].display();
                         break;
-                    
-                    
-                
-                
+                    case 5:System.exit(0);
 
                 }
             }
-            if(type=="current"){
+            else if(type.equalsIgnoreCase(lwe)){
                 System.out.println("Enter the accno: ");
                 accno1=s.nextInt();
                 for(l=0;l<2;l++){
                     if(accno1==r[l].acc_no){
-                        
+
                         break;
                     }
                 }
@@ -143,14 +141,15 @@ public class Lab5 {
                     case 4:
                         r[l].display();
                         break;
-                
-                
+                    case 5:System.exit(0);
+
+
 
                 }
             }
         }
 
-        
+
 
 
     }
