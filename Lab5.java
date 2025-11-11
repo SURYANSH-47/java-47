@@ -79,7 +79,7 @@ public class Lab5 {
             s.nextLine();
         }
         for(int i=1;i>0;i++){
-            System.out.println("1.Withdraw   2.Deposit   3.Compute interest for savings account    4.Display account details    5.EXIT");
+            System.out.println("\n1.Withdraw   2.Deposit   3.Compute interest for savings account    4.Display account details    5.EXIT");
             System.out.println("Enter the choice: ");
             q=s.nextInt();
             if(q==5){
@@ -113,7 +113,7 @@ public class Lab5 {
                     case 4:
                         we[l].display();
                         break;
-                    case 5:System.exit(0);
+                    
 
                 }
             }
@@ -143,7 +143,7 @@ public class Lab5 {
                     case 4:
                         r[l].display();
                         break;
-                    case 5:System.exit(0);
+                    
 
 
 
@@ -156,4 +156,5 @@ public class Lab5 {
 
     }
 }
+
 
